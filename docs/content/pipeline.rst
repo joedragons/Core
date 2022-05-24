@@ -18,7 +18,7 @@ These could be dependencies, name-tags, or found relations between words.
 Based on the given documentation ArDoCo first extracts potential entity names, entity types and relations from the text.
 This stage is called :doc:`text extraction <stages/textExtraction>`.
 
-After it, the doc:`recommendation generation <stages/recommendationGeneration>` begins.
+After it, the :doc:`recommendation generation <stages/recommendationGeneration>` begins.
 In this stage, the entity names and types are combined.
 To increase the hit rate, we use the meta model as additional input for this phase.
 Thereby, potential types are easier to detect.
