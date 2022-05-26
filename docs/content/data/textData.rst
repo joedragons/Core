@@ -1,9 +1,18 @@
 Text Data
 ================
 
-.. note:: This documentation is currently built up
 
+The input text is read in via a `text connector <https://github.com/ArDoCo/Core/blob/main/text-provider/src/main/java/edu/kit/kastel/mcse/ardoco/core/text/providers/ITextConnector.java>`_.
+Currently, we use preprocessing steps in style of Stanford Core NLP.
+The `CoreNLPProvider <https://github.com/ArDoCo/Core/blob/main/text-provider/src/main/java/edu/kit/kastel/mcse/ardoco/core/text/providers/corenlp/CoreNLPProvider.java>`_ takes an InputStream as incoming text and applies selected coreference algorithms, annotators, and a dependency analysis to it.
+The result is a `text <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/IText.java>`_ that is similar to an preprocessed/ annotated Text.
+All further steps, relying on textual input, work with this annotated text.
 
+A text consists of `sentences <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/ISentence.java>`_, that can be subdivided into `phrases <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/IPhrase.java>`_ and `words <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/IWord.java>`_.
+
+The annotations of the text are accessed via the `core document <https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/pipeline/CoreDocument.html>`_ of stanford core nlp.
+While the text provides access to `coreferences <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/ICorefCluster.java>`_, phrases have a `phrase type <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/PhraseType.java>`_, and words `part of speech tags <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/POSTag.java>`_ as well as `dependency tags <https://github.com/ArDoCo/Core/blob/main/common/src/main/java/edu/kit/kastel/mcse/ardoco/core/api/data/text/DependencyTag.java>`_.
+The latter are accessed via the `core labels <https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/ling/CoreLabel.html>`_ of stanford.
 
 .. uml::
 
@@ -17,11 +26,6 @@ Text Data
         getSentences() : ISentence[]
     }
 
-    interface ICorefCluster{
-        id() : int
-        mentions() : IWord[[]]
-        {static} getTextForMention( IWord[] mention) : String
-    }
 
     interface IPhrase{
         getSentenceNo() : int
@@ -103,27 +107,7 @@ Text Data
     IPhrase ..> PhraseType
 
 
-    IText .r.> ICorefCluster
     @enduml
-
-Word
-____________
-
-Sentence
-______________
-
-PosTags
-_____________
-
-Dependencies
-_______________
-
-Coreferences
-_________________
-
-
-
-
 
 
 
