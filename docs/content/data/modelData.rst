@@ -2,7 +2,7 @@
 Model
 ==========
 
-The input model is extracted via a `Model Connector <https://github.com/ArDoCo/Core/tree/main/model-provider/src/main/java/edu/kit/kastel/mcse/ardoco/core/model>`_.
+The input model is extracted via a `model connector <https://github.com/ArDoCo/Core/tree/main/model-provider/src/main/java/edu/kit/kastel/mcse/ardoco/core/model>`_.
 The interface requires an id of the model, a metamodel and the instances.
 
 Currently, we provide two model connectors: a `Json connector for code models <https://github.com/ArDoCo/Core/blob/main/model-provider/src/main/java/edu/kit/kastel/mcse/ardoco/core/model/JavaJsonModelConnector.java>`_ and an `XML connector for PCM models <https://github.com/ArDoCo/Core/blob/main/model-provider/src/main/java/edu/kit/kastel/mcse/ardoco/core/model/PcmXMLModelConnector.java>`_.
