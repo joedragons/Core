@@ -26,35 +26,6 @@
       <url>http://www.opensource.org/licenses/mit-license.php</url>
     </license>
   </licenses>
-  <developers>
-    <developer>
-      <id>Hossiphi</id>
-      <name>Sophie Corallo</name>
-      <email>sophie.schulz@kit.edu</email>
-      <url>https://mcse.kastel.kit.edu/staff_sophie_schulz.php</url>
-      <organization>KASTEL</organization>
-      <organizationUrl>https://mcse.kastel.kit.edu/</organizationUrl>
-      <timezone>GMT+1</timezone>
-    </developer>
-    <developer>
-      <id>dfuchss</id>
-      <name>Dominik Fuchss</name>
-      <email>dominik.fuchss@kit.edu</email>
-      <url>https://mcse.kastel.kit.edu/staff_dominik_fuchss.php</url>
-      <organization>KASTEL</organization>
-      <organizationUrl>https://mcse.kastel.kit.edu/</organizationUrl>
-      <timezone>GMT+1</timezone>
-    </developer>
-    <developer>
-      <id>Gram21</id>
-      <name>Jan Keim</name>
-      <email>jan.keim@kit.edu</email>
-      <url>https://mcse.kastel.kit.edu/staff_Keim_Jan.php</url>
-      <organization>KASTEL</organization>
-      <organizationUrl>https://mcse.kastel.kit.edu/</organizationUrl>
-      <timezone>GMT+1</timezone>
-    </developer>
-  </developers>
 
   <scm>
     <connection>scm:git:git://github.com/ArDoCo/Core.git</connection>
